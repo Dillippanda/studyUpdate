@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            height: 80vh;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 18px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #388E3C;
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 5px #388E3C;
+        }
+
+        /* Style for the download button at the bottom */
+        .nd {
+            height: 30px;
+            width: 150px;
+            padding: 5px;
+            margin: 20px auto;
+            font-size: 14px;
+            border: none;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .nd:hover {
+            background-color: #c0392b;
+        }
+
+        .nd:focus {
+            outline: none;
+            box-shadow: 0 0 5px #c0392b;
+        }
+
+        /* Style for the resume image */
+        .resume-photo {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .resume-photo img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 5px solid white;
+        }
+
+        .resume-photo.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <p>You have successfully logged in.</p>
+        
+        <div class="button-group">
+            <button onclick="window.location.href='OS.html'">OS</button>
+            <button onclick="window.location.href='CN.html'">CN</button>
+            <button onclick="window.location.href='CPP.html'">C++</button>
+            <button onclick="window.location.href='ITC.html'">ITC</button>
+        </div>
+
+        <!-- Button for downloading the PDF -->
+        <a href="C:\Users\VICTUS\OneDrive\Desktop\Dillip resume.pdf" download="resume.pdf" class="nd">Download Resume</a>
+
+        <!-- Button to show resume photo -->
+        <button class="nd" onclick="showPhoto()">Show Resume</button>
+
+        <!-- Resume Photo Modal -->
+        <div id="resumePhoto" class="resume-photo">
+            <img src="C:\Users\VICTUS\OneDrive\Pictures\Screenshots\Screenshot 2024-09-13 022340.png" alt="Resume Photo" />
+            <button onclick="hidePhoto()" style="position: absolute; top: 20px; right: 20px; padding: 10px; background: rgba(255, 255, 255, 0.8); border: none; cursor: pointer;">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function showPhoto() {
+            document.getElementById('resumePhoto').classList.add('active');
+        }
+
+        function hidePhoto() {
+            document.getElementById('resumePhoto').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
